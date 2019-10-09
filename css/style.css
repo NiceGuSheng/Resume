@@ -1,0 +1,504 @@
+body{
+    background-color: #EFEFEF;
+    margin: 0;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+input{outline:none;}
+.icon{
+    width: 1em; height: 1em;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+@keyframes s{
+    0%{
+      width:0px;
+      height:0px;
+      opacity:1;
+    }
+    100%{
+      width:100px;
+      height:100px;
+      opacity:0;
+    }
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ol,ul{
+    list-style: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+}
+.clearfix::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+.border-bo{
+    border-bottom: 1px solid #ccc;
+}
+.head{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.head .headInner{
+    padding: 20px;
+    transition: all 0.5s;
+}
+.head .headInner.active{
+    background-color: white;
+    color: #3D4451;
+    padding: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+.head  a{
+    float: left;
+    padding-top: 3px;
+    padding-bottom: 3.4px;
+}
+.head  nav{
+    float: right;
+    padding-top: 4px;
+    padding-bottom: 0.8px;
+}
+.head  nav  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.head  nav > ul > li{
+    float: left;
+    position: relative;
+    margin-left: 22px;
+    margin-right: 22px;
+}
+.head  nav > ul > li .menuSelect{
+    display: none;
+    margin-top: 3px;
+    padding: 10px 10px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    white-space: nowrap;
+    background-color: white;
+    color: #3D4451;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.head  nav > ul > li.active .menuSelect{
+    display: block;
+    animation: submenuSlide .3s;
+    cursor: pointer;
+}
+@keyframes submenuSlide{
+    0%{
+      margin-right: 100%;
+    }
+    100%{
+      margin-right: 0%;
+    }
+  }
+.head  nav > ul > li.active > a::after,
+.head  nav > ul > li.highlight > a::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width:100%;
+    height: 3px;
+    background-color: #7CCD7C;
+    border-radius: 1px;
+    animation: slid .3s;
+}
+@keyframes slid{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%
+    }
+}
+[data-x].offset{
+    transform: translateY(100px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
+}
+
+.head .logo span{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium';
+}
+.head .logo .rs{
+    color: #7CCD7C;
+}
+.head .logo .card{
+    color: #9A9DA2;
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+.head  nav  ul > li > a{
+    font-size: 14px;
+    font-weight: bold;
+    color: #858A90;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    display: block;
+}
+.head  nav  ul > li ul li a{
+    font-size: 14px;
+    font-weight: initial;
+    color: black;
+
+}
+.banner{
+    background-image:url("../img/timg.jpg");
+    height: 500px;
+    background-position: center;
+}
+.banner .mask{
+    height: 500px;
+    background-color: rgba(0,0,0,0.8);
+
+}
+.userCard{
+    background-color: white;
+    margin-top: -330px;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+
+}
+.userCard,.selfIntroduction,
+section .skills-inner,
+section.productions .jobs,
+section.pikachu .pikachu-box,
+section.contact .contact-box{
+    max-width: 910px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.userCard .card-top{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.userCard .card-top .welcome{
+    background-color: #7CCD7C;
+    padding:4px 15px;
+    color: white;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    position: relative;
+}
+.userCard .welcome .triangle{
+    display: block;
+    border: 10px solid #7CCD7C;
+    width: 0px;
+    height: 0px;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-width: 0px;
+    position: absolute;
+    top: 100%;
+    left: 4px;
+}
+.userCard .card-top{
+    display: flex;
+    justify-content: space-around;
+}
+.userCard .card-top .card-left{
+    
+    padding-left: 50px;
+    border-radius: 50%;
+}
+.userCard .card-top .card-left img{
+    width: 280px;
+}
+.userCard .card-top .card-right{
+   
+    padding-left: 70px;
+}
+.userCard .card-top .card-right>h1{
+    padding-top: 30px;
+}
+.userCard .card-top .card-right hr{
+    width: 380px;
+    height: 0;
+    border: none;
+    border-top: 1px solid #DEDEDE;
+    margin: 25px 0;
+}
+.userCard  dl{
+    display: block;
+}
+.userCard  dl dt,
+.userCard dl dd{
+    float: left;
+    padding: 8px 0;
+}
+.userCard  dl dt{
+    width: 30%;
+    font-weight: bold;
+}
+.userCard dl dd{
+    width: 70%;
+    color: #9DA0A7;
+}
+.userCard footer{
+    background-color:#7CCD7C;
+    text-align: center;
+}
+.userCard footer a{ 
+    display: inline-block;
+    border-radius: 50%;
+    width: 40px;
+    padding: 7px 0;
+    margin: 15px;
+}
+.userCard footer a:hover{
+    background-color: #7CCD7C;
+}
+.userCard footer svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+    vertical-align: top;
+}
+.userCard footer .zhihu{
+    background-image:url('../img/zhihu.png');
+}
+.userCard footer .weibo{
+    background-image:url('../img/weibo.png');
+}
+.userCard footer .github{
+    background-image:url('../img/github.png');
+}
+main .button-wrapper{
+    text-align:center;
+}
+main .button-wrapper .button{
+    border: 1px solid #CDCFD1;
+    padding: 21px 55px; 
+    margin: 32px 0;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #EFEFEF;
+    font-weight: bold;
+}
+main .button-wrapper .button:hover{
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
+}
+main .selfIntroduction{
+    text-align: center;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.8;
+}
+section h2{
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+    text-align: center;
+}
+section.skills h3{
+    font-size: 14px;
+    line-height: 1.1;
+    padding-right: 40px;
+    color: #A2A4A7;
+    padding-bottom: 4px;
+}
+section.skills,section.productions{
+    margin-top: 60px;
+}
+section .skills-inner{
+    padding: 40px 40px 0;
+    background-color: white;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75); 
+    margin-top: 30px;
+    box-sizing: border-box;
+}
+section .skills-inner .progressBar{
+    height: 5px;
+    background-color:   #EEEED1;
+    border-radius: 2px;
+    overflow: hidden;
+}
+section .skills-inner .progress{
+    height: 100%;
+    background-color: #7CCD7C;
+    border-radius: 2px;
+    width: 40%;
+    transform: translateX(0);
+    transition: all 1s
+}
+section.skills.offset  .progress{
+    transform: translateX(-100%);
+}
+section .skills-inner li{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 40px;
+    padding-bottom: 40px;
+}
+section .skills-inner li:nth-child(even){
+    float: right;
+    padding-right: 0;
+    
+}
+section.productions{
+    text-align: center;
+}
+section.productions > nav > ul >li{
+    float: left;
+    padding-left: 40px;
+    cursor: pointer;
+}
+section.productions > nav > ul >li:nth-child(1){
+    padding-left: 0;
+}
+section.productions > nav{
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+section.productions nav .bar{
+    height: 5px;
+    background-color: white;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+#barPro{
+    height: 100%;
+    background-color: #7CCD7C;
+    border-radius: 2px;
+    transition: all 0.2s;
+
+}
+section.productions nav .bar .bar-inner1{
+    width: 70px;
+}
+section.productions nav .bar .bar-inner2{
+    width: 70px;
+    margin-left: 104px;
+}
+section.productions nav .bar .bar-inner3{
+    width: 120px;
+    margin-left: 200px;
+}
+section.productions .jobs{  
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.75);
+    text-align: left;
+    padding: 30px;
+    box-sizing: border-box;
+}
+section.productions .jobs h3{
+    font-weight: bold;
+}
+section.productions .jobs p{
+    font-size: .9em;
+    line-height: 26px;
+    color: #9DA0A7;
+}
+section.productions .jobs .job-description{
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+section.productions .jobs .job-description.job1{
+    height: 240px;
+}
+section.productions .jobs .job-description.job2{
+    height: 165px;
+}
+section.productions .jobs .job-description.job3{
+    height: 300px;
+}
+section.productions .jobs .big img,
+section.productions .jobs .small1 img,
+section.productions .jobs .small2 img{
+    width: 300px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+section.productions .jobs img{
+    cursor: pointer;
+    float: left;
+}
+section.productions .jobs div{
+    margin-top: 10px;
+}
+
+section.contact h2{
+    margin: 50px 0;
+}
+section.contact .contact-box{
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow:  0px 0px 6px 0px rgba(0,0,0,0.75); 
+    padding: 30px;
+    text-align: center;
+}
+section.contact .contact-box ul li.contactClass,
+section.contact .contact-box .weichat{
+    color: rgb(165, 165, 165);
+    margin: 10px;
+    font-size: 12px;
+}
+section.contact .contact-box ul li.contactContent{
+    border-radius: 4px;
+    color: white;
+    background-color: #7CCD7C;
+    padding: 10px;
+    font-size: 18px;
+    transition: all .5s;
+}
+
+section.contact .contact-box img{
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #7CCD7C;
+}
+
+#canvasImg.hid,#bookmarksImg.hid,#musicImg.hid,#wechatAppImg.hid,#weiAppImg.hid,#vueClientImg.hid{
+    display: none;
+}
+#canvasImg img.active{
+    width: 300px;
+}
+#musicImg img.active{
+    left: 0;
+    top:0;
+}
+
+@media print{
+    .headInner nav,
+    main .button-wrapper,
+    section.postMessage,
+    section.blog,
+    section.pikachu{
+        display: none;
+    }
+    main .selfIntroduction{
+        margin-top: 30px;
+    }
+}
